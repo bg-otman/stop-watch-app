@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 3rem;
+  transform: translateY(23px);
+  font-family: monospace;
+}
+
+.color-change {
+  color: red;
+}
+
+.timer + div {
+  position: absolute;
+  bottom: -100px;
+  transform: translateX(12px);
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-transform: uppercase;
+  margin-right: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 1px whitesmoke;
+  transition: 0.3s;
+}
+button:hover {
+  box-shadow: 0px 0px 15px 1px rgb(219, 40, 40);
+}
+
+.start__button {
+  background-color: #1ecd97;
+}
+.pause__button {
+  background-color: rgb(233, 105, 0);
+}
+.reset__button {
+  background-color: rgb(197, 42, 14);
+}
+
+audio {
+  position: absolute;
+  bottom: -180px;
+  right: 15px;
+}
+audio::-webkit-media-controls-panel {
+  background-color: #56aeff;
+}
+.confirm__message {
+  position: absolute;
+  bottom: 0;
+  border-radius: 15px;
+  color: #000;
+  background-color: rgb(197, 178, 93);
+  width: 30rem;
+  height: 8rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.confirm__message button {
+  color: #000;
+}
+.confirm__message > div {
+  display: flex;
+  gap: 10px;
+}
+
+.container {
+  position: relative;
+  border: 10px solid rgb(0, 140, 255);
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 23rem;
+  height: 23rem;
+  margin-top: 3rem;
+  animation: chngBrColor 20s ease-in-out infinite;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 23.2rem;
+  height: 23.2rem;
+  border-radius: 50%;
+  background-color: rgba(0, 140, 255, 0.815);
+  filter: blur(1rem);
+  z-index: -1;
+  animation: chngBgColor 20s ease-in-out infinite;
+}
+
+@keyframes chngBgColor {
+  0%,
+  100% {
+    background-color: rgba(0, 140, 255, 0.815);
+  }
+  25% {
+    background-color: rgba(1, 225, 255, 0.815);
+  }
+  35% {
+    background-color: rgba(201, 24, 245, 0.815);
+  }
+  45% {
+    background-color: rgba(250, 34, 135, 0.815);
+  }
+  65% {
+    background-color: rgba(245, 40, 40, 0.815);
+  }
+  75% {
+    background-color: rgba(235, 100, 100, 0.815);
+  }
+  85% {
+    background-color: rgba(72, 87, 223, 0.815);
+  }
+}
+
+@keyframes chngBrColor {
+  0%,
+  100% {
+    border-color: rgba(0, 140, 255, 0.815);
+  }
+  25% {
+    border-color: rgba(1, 225, 255, 0.815);
+  }
+  35% {
+    border-color: rgba(201, 24, 245, 0.815);
+  }
+  45% {
+    border-color: rgba(250, 34, 135, 0.815);
+  }
+  65% {
+    border-color: rgba(245, 40, 40, 0.815);
+  }
+  75% {
+    border-color: rgba(235, 100, 100, 0.815);
+  }
+  85% {
+    border-color: rgba(72, 87, 223, 0.815);
+  }
+}
+
+@media (max-width: 410px) {
+  .container {
+    width: 19rem;
+    height: 19rem;
+  }
+  .container::before {
+    width: 19.2rem;
+    height: 19.2rem;
+  }
+  .timer + div {
+    transform: translateY(40px);
+  }
+  .timer + div button {
+    width: 80px;
+    height: 50px;
+  }
+  audio {
+    bottom: -230px;
+    right: -10px;
+  }
+  .confirm__message {
+    bottom: -50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .confirm__message {
+    width: 20rem;
+  }
+}

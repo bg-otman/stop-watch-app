@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stop-watch.css" />
+    <title>Stop-Watch | Timer</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-timer timer">00:00:00</div>
+      <div>
+        <button class="js-reset-button reset__button">Reset</button>
+        <button class="js-start-button start__button">Start</button>
+        <button class="js-pause-button pause__button">Pause</button>
+      </div>
+      <audio id="myAudio" title="Lo-Fi Focus music Beat" controls>
+        <source src="focus.mp3" type="audio/mpeg" />
+        Your browser not support the audio tag !
+      </audio>
+      <div class="js-play-confirm confirm__message">
+        <div>
+          <p>Do you want also to play focus music ?</p>
+          <p class="dispear-time"></p>
+        </div>
+        <div>
+          <button class="js-yes-button">Yes</button>
+          <button class="js-no-button">No</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="stop-watch.js"></script>
+  </body>
+</html>
